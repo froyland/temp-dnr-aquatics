@@ -98,8 +98,6 @@ require(['dojo/on','esri/core/Accessor',
             params.height = view.height;    
             params.tolerance = 3;
         })
-        
-        // .then(createLayer)
         .otherwise(errback)
         
         view.whenLayerView(mapservice)
