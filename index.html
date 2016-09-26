@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DNR Aquatics Lands Data</title>
+
+    <style>
+    html, body, .map-container{
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;      
+        display: flex;  
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+    }
+
+    #viewDiv{
+        flex: 1 0 auto;
+        padding: 0;
+        margin: 0;        
+        width: 100%;
+        align-items: flex-end;     
+    }
+    
+    .page-header{
+        -webkit-flex: none;
+        -moz-flex: none;
+        -ms-flex: none;
+        -o-flex: none;
+        flex: none;
+        margin: auto;
+    }
+
+    .btn-holder{
+        justify-content: center;
+    }
+
+    .header-btn{
+        margin: 0 10px;        
+    }
+
+    .header-title{
+        justify-content: center;
+    }
+
+    .button-container{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .flex{
+        display: flex;
+    }
+
+    .inactive{
+        color: #d3d3d3 !important;
+    }
+
+    .leg{
+        position: absolute; 
+        bottom:0; 
+        left:0; 
+        width: 100%;
+        display: none;
+    }
+
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.0/"></script>
+
+    <!--<link href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="libs/jquery-3.1.0.min.js">-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <div class="map-container">
+        <header class="page-header">     
+            <h2 class="header-title flex">DNR Aquatic Lands Data</h2>   
+            <div class="button-container flex">                
+               <div class="dropdown">
+                    <button id="toggle-btn" class="btn btn-default dropdown-toggle header-btn flex disabled" type="button" data-toggle="dropdown">Toggle Data Layers
+                        <span class="caret"></span>
+                    </button>
+                  <ul id="layerList" class="dropdown-menu flex">
+                     
+                  </ul>
+                </div>                
+                <div id="toggle-btn-leg" class="btn btn-default header-btn disabled">Show Legend</div>                
+            </div>            
+        </header>
+        
+        <div id='viewDiv' class="flex"><div>
+            <div>
+                <a href="/leg/leg.png" target="_blank">
+                <img class='leg' src="/leg/leg.png" alt="Legend" attributes="#">
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
